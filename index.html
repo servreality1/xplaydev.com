@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XPlayDev | Professional Cross Platform Mobile Game Development</title>
+    <meta name="description" content="XPlayDev is a leading studio specializing in cross platform mobile game development. We create high-performance, engaging games for iOS and Android using cutting-edge technology.">
+    <meta name="keywords" content="cross platform mobile game development, mobile game studio, game development services, Unity game development, Unreal Engine mobile games, XPlayDev">
+    <link rel="canonical" href="https://xplaydev.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://xplaydev.com/">
+    <meta property="og:title" content="XPlayDev | Professional Cross Platform Mobile Game Development">
+    <meta property="og:description" content="Expert mobile game development services. We bring your vision to life across all mobile platforms.">
+    <meta property="og:image" content="https://picsum.photos/seed/game/1200/630">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://xplaydev.com/">
+    <meta property="twitter:title" content="XPlayDev | Professional Cross Platform Mobile Game Development">
+    <meta property="twitter:description" content="Expert mobile game development services. We bring your vision to life across all mobile platforms.">
+    <meta property="twitter:image" content="https://picsum.photos/seed/game/1200/630">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cream: '#e6e1c5',
+                            gold: '#d4cb92',
+                            dark: '#395c6b',
+                            blue: '#80a4ed',
+                            light: '#bcd3f2',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e6e1c5;
+            color: #395c6b;
+            scroll-behavior: smooth;
+        }
+
+        .blog-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #395c6b;
+        }
+
+        .blog-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: rgba(57, 92, 107, 0.8);
+        }
+
+        .hidden-section {
+            display: none;
+        }
+    </style>
+
+    <!-- JSON-LD Microdata -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GameServer",
+      "name": "XPlayDev",
+      "url": "https://xplaydev.com",
+      "logo": "https://xplaydev.com/logo.png",
+      "description": "Professional cross platform mobile game development studio.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Francisco",
+        "addressRegion": "CA",
+        "postalCode": "94103",
+        "streetAddress": "123 Tech Plaza"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-555-0199",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent text-brand-dark py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2 cursor-pointer" onclick="showHome()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line><rect x="2" y="6" width="20" height="12" rx="2"></rect></svg>
+                    <span class="text-2xl font-bold tracking-tighter">XPLAYDEV</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <div id="desktop-links" class="flex space-x-8 items-center">
+                        <a href="#services" class="font-medium hover:text-brand-blue transition-colors">Services</a>
+                        <a href="#about" class="font-medium hover:text-brand-blue transition-colors">About</a>
+                        <a href="#blog" class="font-medium hover:text-brand-blue transition-colors">Blog</a>
+                        <a href="#testimonials" class="font-medium hover:text-brand-blue transition-colors">Testimonials</a>
+                        <a href="#contact" class="font-medium hover:text-brand-blue transition-colors">Contact</a>
+                    </div>
+                    <button class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold hover:bg-opacity-90 transition-all transform hover:scale-105">
+                        Start Project
+                    </button>
+                </div>
+
+                <div class="md:hidden">
+                    <button onclick="toggleMenu()" class="p-2">
+                        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark text-white">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#services" class="block px-3 py-4 text-lg font-medium border-b border-white/10" onclick="toggleMenu()">Services</a>
+                <a href="#about" class="block px-3 py-4 text-lg font-medium border-b border-white/10" onclick="toggleMenu()">About</a>
+                <a href="#blog" class="block px-3 py-4 text-lg font-medium border-b border-white/10" onclick="toggleMenu()">Blog</a>
+                <a href="#testimonials" class="block px-3 py-4 text-lg font-medium border-b border-white/10" onclick="toggleMenu()">Testimonials</a>
+                <a href="#contact" class="block px-3 py-4 text-lg font-medium border-b border-white/10" onclick="toggleMenu()">Contact</a>
+                <div class="pt-4">
+                    <button class="w-full bg-brand-blue text-white py-3 rounded-xl font-bold">
+                        Start Project
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Home Page Content -->
+        <div id="home-page">
+            <!-- Hero Section -->
+            <header class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-full -z-10 opacity-20">
+                    <div class="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-brand-blue rounded-full blur-[120px]"></div>
+                    <div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-gold rounded-full blur-[100px]"></div>
+                </div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <span class="inline-block px-4 py-1 rounded-full bg-brand-blue/10 text-brand-blue font-bold text-sm mb-6 uppercase tracking-widest">
+                        Next-Gen Mobile Gaming
+                    </span>
+                    <h1 class="text-5xl md:text-7xl font-black text-brand-dark mb-8 leading-tight">
+                        Crafting Immersive <br />
+                        <span class="text-brand-blue">Mobile Experiences</span>
+                    </h1>
+                    <p class="text-xl text-brand-dark/70 max-w-2xl mx-auto mb-10">
+                        We specialize in high-performance cross platform mobile game development, bringing your creative vision to players worldwide on any device.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <button class="bg-brand-dark text-white px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-opacity-90 transition-all shadow-xl">
+                            View Our Portfolio
+                        </button>
+                        <button class="bg-white text-brand-dark border-2 border-brand-dark/10 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-brand-cream transition-all">
+                            Our Services
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Services Section -->
+            <section id="services" class="py-24 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-bold text-brand-dark mb-4">Our Expertise</h2>
+                        <p class="text-brand-dark/60 max-w-xl mx-auto">From concept to launch, we provide end-to-end solutions for the gaming industry.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="p-8 rounded-3xl bg-brand-cream/30 border border-brand-dark/5 hover:border-brand-blue/30 transition-all">
+                            <div class="text-brand-blue mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-4">Mobile Game Design</h3>
+                            <p class="text-brand-dark/70 leading-relaxed">Creating addictive gameplay loops and stunning visual aesthetics tailored for touch interfaces.</p>
+                        </div>
+                        <div class="p-8 rounded-3xl bg-brand-cream/30 border border-brand-dark/5 hover:border-brand-blue/30 transition-all">
+                            <div class="text-brand-blue mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-4">Cross-Platform Dev</h3>
+                            <p class="text-brand-dark/70 leading-relaxed">Write once, play everywhere. We use Unity and Unreal Engine to target iOS and Android simultaneously.</p>
+                        </div>
+                        <div class="p-8 rounded-3xl bg-brand-cream/30 border border-brand-dark/5 hover:border-brand-blue/30 transition-all">
+                            <div class="text-brand-blue mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-4">Backend & LiveOps</h3>
+                            <p class="text-brand-dark/70 leading-relaxed">Scalable server solutions, multiplayer integration, and continuous content updates to keep players engaged.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main SEO Content Block -->
+            <section class="py-24 bg-brand-dark text-brand-cream overflow-hidden relative">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-brand-blue">The Future of Gaming: Cross Platform Mobile Game Development</h2>
+                    <div class="space-y-6 text-lg leading-relaxed opacity-90">
+                        <p>
+                            In the rapidly evolving digital landscape, the demand for high-quality interactive entertainment has never been higher. As a premier studio, we understand that the cornerstone of modern success lies in effective <strong>cross platform mobile game development</strong>. This approach allows developers to reach a massive global audience by ensuring that games run seamlessly across both iOS and Android ecosystems without compromising on performance or visual fidelity.
+                        </p>
+                        <p>
+                            The process of <strong>cross platform mobile game development</strong> involves more than just porting code from one system to another. It requires a deep understanding of hardware abstraction, optimized rendering pipelines, and intuitive user interface design that adapts to various screen sizes and aspect ratios. By leveraging powerful engines like Unity and Unreal Engine, our team at XPlayDev creates experiences that feel native to every device, providing players with consistent gameplay regardless of their chosen hardware.
+                        </p>
+                        <p>
+                            One of the primary advantages of investing in <strong>cross platform mobile game development</strong> is the significant reduction in time-to-market and maintenance costs. Instead of managing two separate codebases, developers can focus their energy on refining gameplay mechanics, creating rich narratives, and implementing innovative features. This unified workflow not only streamlines the production cycle but also ensures that updates and bug fixes are deployed simultaneously to all users, maintaining a healthy and synchronized player base.
+                        </p>
+                        <p>
+                            Furthermore, <strong>cross platform mobile game development</strong> is essential for the growth of competitive multiplayer and social gaming. When players can interact with friends across different platforms, the community becomes more vibrant and engaged. Our expertise in backend integration and real-time networking allows us to build robust social features that bridge the gap between platforms, fostering a truly inclusive gaming environment.
+                        </p>
+                        <p>
+                            As we look toward the future, the boundaries between devices continue to blur. XPlayDev remains at the forefront of this revolution, continuously pushing the limits of what is possible in <strong>cross platform mobile game development</strong>. Whether you are an indie developer with a unique concept or a large corporation looking to expand your digital footprint, our dedicated team is here to transform your vision into a global phenomenon. Join us as we redefine the mobile gaming experience, one platform at a time.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Us Section -->
+            <section id="about" class="py-24">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" alt="Game Development Team" class="rounded-3xl shadow-2xl relative z-10">
+                            <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-brand-gold rounded-3xl -z-10"></div>
+                        </div>
+                        <div>
+                            <h2 class="text-4xl font-bold text-brand-dark mb-6">About XPlayDev</h2>
+                            <p class="text-xl text-brand-dark/70 mb-8 leading-relaxed">
+                                Founded in 2018, XPlayDev was born out of a passion for storytelling and technical excellence. We are a team of dreamers, coders, and artists dedicated to pushing the boundaries of mobile hardware.
+                            </p>
+                            <div class="space-y-4">
+                                <div class="flex gap-4">
+                                    <div class="mt-1 bg-brand-blue/20 p-1 rounded-lg text-brand-blue">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-brand-dark">Innovation First</h4>
+                                        <p class="text-brand-dark/60">We don't just follow trends; we set them with unique mechanics.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div class="mt-1 bg-brand-blue/20 p-1 rounded-lg text-brand-blue">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-brand-dark">Quality Driven</h4>
+                                        <p class="text-brand-dark/60">Rigorous testing ensures a bug-free experience for every player.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog Section -->
+            <section id="blog" class="py-24 bg-brand-light/20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between items-end mb-16">
+                        <div>
+                            <h2 class="text-4xl font-bold text-brand-dark mb-4">Latest from Blog</h2>
+                            <p class="text-brand-dark/60">Insights and news from the front lines of game dev.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Post 1 -->
+                        <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+                            <div class="relative h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="Shaders" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                <span class="absolute top-4 left-4 bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Technical</span>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-sm text-brand-dark/50 mb-2">March 10, 2026</p>
+                                <h3 class="text-xl font-bold text-brand-dark mb-4 group-hover:text-brand-blue transition-colors">Optimizing Shaders for Low-End Mobile Devices</h3>
+                                <button onclick="showPost('shaders')" class="inline-flex items-center gap-2 font-bold text-brand-dark hover:gap-3 transition-all">
+                                    Read More <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 -6"></polyline></svg>
+                                </button>
+                            </div>
+                        </article>
+                        <!-- Post 2 -->
+                        <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+                            <div class="relative h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?auto=format&fit=crop&w=600&q=80" alt="Monetization" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                <span class="absolute top-4 left-4 bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Design</span>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-sm text-brand-dark/50 mb-2">March 05, 2026</p>
+                                <h3 class="text-xl font-bold text-brand-dark mb-4 group-hover:text-brand-blue transition-colors">The Psychology of In-Game Monetization</h3>
+                                <button onclick="showPost('monetization')" class="inline-flex items-center gap-2 font-bold text-brand-dark hover:gap-3 transition-all">
+                                    Read More <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 -6"></polyline></svg>
+                                </button>
+                            </div>
+                        </article>
+                        <!-- Post 3 -->
+                        <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
+                            <div class="relative h-48 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80" alt="Forward" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                <span class="absolute top-4 left-4 bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Industry</span>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-sm text-brand-dark/50 mb-2">February 28, 2026</p>
+                                <h3 class="text-xl font-bold text-brand-dark mb-4 group-hover:text-brand-blue transition-colors">Why Cross-Platform is the Only Way Forward</h3>
+                                <button onclick="showPost('forward')" class="inline-flex items-center gap-2 font-bold text-brand-dark hover:gap-3 transition-all">
+                                    Read More <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 -6"></polyline></svg>
+                                </button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section id="testimonials" class="py-24 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-bold text-brand-dark mb-4">What Our Clients Say</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="p-10 rounded-3xl bg-brand-cream/20 border border-brand-dark/5 italic relative">
+                            <p class="text-lg text-brand-dark/80 mb-6">"XPlayDev transformed our complex PC title into a flawless mobile experience. Their attention to detail in cross platform mobile game development is unmatched."</p>
+                            <div>
+                                <p class="font-bold text-brand-dark">Sarah Jenkins</p>
+                                <p class="text-sm text-brand-dark/50">CEO, PixelFlow Studios</p>
+                            </div>
+                        </div>
+                        <div class="p-10 rounded-3xl bg-brand-cream/20 border border-brand-dark/5 italic relative">
+                            <p class="text-lg text-brand-dark/80 mb-6">"Working with XPlayDev was a breeze. They handled everything from backend scaling to UI optimization, delivering ahead of schedule."</p>
+                            <div>
+                                <p class="font-bold text-brand-dark">Michael Chen</p>
+                                <p class="text-sm text-brand-dark/50">Product Lead, GameSphere</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="py-24 bg-brand-dark text-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                        <div>
+                            <h2 class="text-4xl font-bold mb-6">Ready to Build Your Next Hit?</h2>
+                            <p class="text-xl text-white/70 mb-10">Let's discuss your project and how we can help you dominate the mobile market.</p>
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="bg-brand-blue/20 p-3 rounded-xl text-brand-blue">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-white/50">Email us at</p>
+                                        <p class="font-bold">hello@xplaydev.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="bg-white/5 p-8 rounded-3xl border border-white/10">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                                <input type="text" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-blue" placeholder="Name">
+                                <input type="email" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-blue" placeholder="Email">
+                            </div>
+                            <textarea rows="4" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-blue mb-6" placeholder="Message"></textarea>
+                            <button type="button" class="w-full bg-brand-blue text-white py-4 rounded-xl font-bold text-lg hover:bg-opacity-90 transition-all">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Blog Post Content (Hidden by default) -->
+        <div id="post-page" class="hidden-section pt-32 pb-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <button onclick="showHome()" class="flex items-center gap-2 text-brand-blue font-bold mb-8 hover:gap-3 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(180deg)"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    Back to Home
+                </button>
+                
+                <div id="post-header">
+                    <!-- Dynamic Header -->
+                </div>
+
+                <div class="rounded-3xl overflow-hidden mb-12 shadow-2xl">
+                    <img id="post-image" src="" alt="" class="w-full h-[400px] object-cover">
+                </div>
+
+                <div id="post-content" class="blog-content text-brand-dark/80 leading-relaxed space-y-6">
+                    <!-- Dynamic Content -->
+                </div>
+
+                <div class="mt-16 p-8 rounded-3xl bg-brand-cream/30 border border-brand-dark/5 flex flex-col md:flex-row items-center gap-8">
+                    <div class="bg-brand-blue text-white p-4 rounded-2xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-5c1.62-2.2 5-3 5-3"></path><path d="M12 15v5s3.03-.55 5-2c2.2-1.62 3-5 3-5"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-brand-dark mb-2">Ready to start your project?</h3>
+                        <p class="text-brand-dark/60">Our experts are ready to help you with your next mobile game.</p>
+                    </div>
+                    <button class="bg-brand-dark text-white px-8 py-4 rounded-xl font-bold whitespace-nowrap hover:bg-opacity-90 transition-all">
+                        Contact Us Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white border-t border-white/10 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-blue"><rect x="2" y="6" width="20" height="12" rx="2"></rect><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><line x1="15" y1="13" x2="15.01" y2="13"></line><line x1="18" y1="11" x2="18.01" y2="11"></line></svg>
+                        <span class="text-xl font-bold tracking-tighter uppercase">XPLAYDEV</span>
+                    </div>
+                    <p class="text-white/60">Leading the way in cross platform mobile game development since 2018.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Company</h4>
+                    <ul class="space-y-4 text-white/60">
+                        <li><a href="#" class="hover:text-white">About Us</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="#" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Services</h4>
+                    <ul class="space-y-4 text-white/60">
+                        <li><a href="#" class="hover:text-white">Game Design</a></li>
+                        <li><a href="#" class="hover:text-white">Development</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Newsletter</h4>
+                    <div class="flex gap-2">
+                        <input type="email" class="bg-white/10 border border-white/20 rounded-lg px-4 py-2 flex-grow text-sm focus:outline-none" placeholder="Email">
+                        <button class="bg-brand-blue px-4 py-2 rounded-lg">Go</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/10 text-sm text-white/40">
+                <p>© 2026 XPlayDev. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const blogPosts = {
+            shaders: {
+                category: "Technical",
+                title: "Optimizing Shaders for Low-End Mobile Devices",
+                date: "March 10, 2026",
+                img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80",
+                content: `
+                    <p>When it comes to <strong>cross platform mobile game development</strong>, performance is the ultimate king. One of the most significant bottlenecks in mobile gaming is the GPU, specifically when dealing with complex shaders on low-end devices.</p>
+                    <h3>Simplified Math is Better Math</h3>
+                    <p>On mobile GPUs, floating-point operations can be expensive. We recommend using half-precision (fp16) wherever possible instead of full precision (fp32). This simple change can significantly reduce the power consumption and heat generation on older smartphones, which is a critical consideration in professional <a href="javascript:showHome()" class="text-brand-blue font-bold">cross platform mobile game development</a>.</p>
+                    <h3>Texture Fetching Optimization</h3>
+                    <p>Minimize the number of texture lookups in your fragment shaders. Combining multiple masks into a single RGBA texture (texture packing) is a standard industry practice that we employ at XPlayDev to ensure our games run smoothly on everything from budget tablets to flagship phones.</p>
+                    <h3>The Power of Pre-calculation</h3>
+                    <p>If a value doesn't change per pixel, move the calculation to the vertex shader or even the CPU. In the world of <a href="javascript:showHome()" class="text-brand-blue font-bold">cross platform mobile game development</a>, every millisecond saved in the rendering pipeline translates to a better user experience and higher retention rates.</p>
+                `
+            },
+            monetization: {
+                category: "Design",
+                title: "The Psychology of In-Game Monetization",
+                date: "March 05, 2026",
+                img: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?auto=format&fit=crop&w=600&q=80",
+                content: `
+                    <p>Successful monetization in modern gaming is less about "selling" and more about "valuing" the player's time and investment. In our journey through <strong>cross platform mobile game development</strong>, we've discovered that the most successful titles are those that integrate their economy seamlessly into the core loop.</p>
+                    <h3>The Value Exchange</h3>
+                    <p>Players are willing to pay for convenience, cosmetic expression, or content expansion. However, the "Pay-to-Win" model is increasingly rejected by global audiences. When we approach <a href="javascript:showHome()" class="text-brand-blue font-bold">cross platform mobile game development</a>, we focus on ethical monetization strategies that respect the competitive integrity of the game.</p>
+                    <h3>Regional Pricing Strategies</h3>
+                    <p>Because <a href="javascript:showHome()" class="text-brand-blue font-bold">cross platform mobile game development</a> allows you to reach players in every corner of the globe, regional pricing becomes essential. A price point that works in the US might be prohibitive in emerging markets. Dynamic pricing models help maximize revenue while keeping the game accessible to all.</p>
+                    <h3>Retention Over Conversion</h3>
+                    <p>It is far more valuable to have a player who stays for a year and spends $10 than a player who spends $50 and leaves after a week. Long-term engagement is the metric that truly defines success in the competitive landscape of mobile gaming.</p>
+                `
+            },
+            forward: {
+                category: "Industry",
+                title: "Why Cross-Platform is the Only Way Forward",
+                date: "February 28, 2026",
+                img: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80",
+                content: `
+                    <p>The era of platform exclusivity in the mobile space is effectively over. For any ambitious studio, <strong>cross platform mobile game development</strong> is no longer an option—it is a requirement for survival and growth.</p>
+                    <h3>Unified Communities</h3>
+                    <p>The greatest asset of any game is its community. By utilizing <a href="javascript:showHome()" class="text-brand-blue font-bold">cross platform mobile game development</a>, you remove the barriers between friends. Whether one is on an iPhone and the other on an Android device, they can play together, compete, and share experiences. This social cohesion is the "secret sauce" of modern viral hits.</p>
+                    <h3>Market Reach and ROI</h3>
+                    <p>Developing for a single platform means ignoring roughly 50% of the potential market. The initial investment in a robust <a href="javascript:showHome()" class="text-brand-blue font-bold">cross platform mobile game development</a> framework pays for itself many times over by doubling your potential user base from day one.</p>
+                    <h3>Future-Proofing Your IP</h3>
+                    <p>Technology changes, but your codebase shouldn't have to be rewritten every time a new OS version drops. A cross-platform approach provides a layer of abstraction that makes your intellectual property more resilient to market shifts and hardware iterations.</p>
+                `
+            }
+        };
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function showPost(postId) {
+            const post = blogPosts[postId];
+            if (!post) return;
+
+            document.getElementById('home-page').classList.add('hidden-section');
+            document.getElementById('post-page').classList.remove('hidden-section');
+            document.getElementById('desktop-links').classList.add('hidden');
+
+            document.getElementById('post-header').innerHTML = `
+                <span class="inline-block px-4 py-1 rounded-full bg-brand-blue/10 text-brand-blue font-bold text-sm mb-4 uppercase tracking-widest">
+                    ${post.category}
+                </span>
+                <h1 class="text-4xl md:text-6xl font-black text-brand-dark mb-6 leading-tight">
+                    ${post.title}
+                </h1>
+                <p class="text-brand-dark/50 flex items-center gap-2">
+                    By XPlayDev Team • ${post.date}
+                </p>
+            `;
+            document.getElementById('post-image').src = post.img;
+            document.getElementById('post-image').alt = post.title;
+            document.getElementById('post-content').innerHTML = post.content;
+
+            window.scrollTo(0, 0);
+        }
+
+        function showHome() {
+            document.getElementById('home-page').classList.remove('hidden-section');
+            document.getElementById('post-page').classList.add('hidden-section');
+            document.getElementById('desktop-links').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-brand-dark', 'text-white', 'shadow-lg');
+                navbar.classList.remove('bg-transparent', 'text-brand-dark');
+            } else {
+                navbar.classList.remove('bg-brand-dark', 'text-white', 'shadow-lg');
+                navbar.classList.add('bg-transparent', 'text-brand-dark');
+            }
+        });
+    </script>
+</body>
+</html>
